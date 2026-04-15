@@ -1,6 +1,6 @@
 ﻿namespace labWork2Sim
 {
-    partial class CreateForm
+    partial class RemoveEndForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,32 +29,44 @@
         private void InitializeComponent()
         {
             button1 = new Button();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button1.Location = new Point(47, 12);
+            button1.Location = new Point(390, 386);
             button1.Name = "button1";
-            button1.Size = new Size(123, 57);
-            button1.TabIndex = 0;
-            button1.Text = "Создать ";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 3;
+            button1.Text = "удалить";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += btnCreate_Click;
+            button1.Click += btnRemove_Click;
             // 
-            // CreateForm
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 41);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(776, 235);
+            dataGridView1.TabIndex = 2;
+            // 
+            // RemoveEndForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(260, 121);
+            ClientSize = new Size(800, 450);
             Controls.Add(button1);
-            Name = "CreateForm";
-            Text = "Создать список";
+            Controls.Add(dataGridView1);
+            Name = "RemoveEndForm";
+            Text = "Удаление с конца";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button button1;
+        private DataGridView dataGridView1;
     }
 }

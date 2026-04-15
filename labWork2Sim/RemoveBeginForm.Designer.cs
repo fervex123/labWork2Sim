@@ -1,6 +1,6 @@
 ﻿namespace labWork2Sim
 {
-    partial class CreateForm
+    partial class RemoveBeginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            dataGridView1 = new DataGridView();
             button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 27);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(776, 235);
+            dataGridView1.TabIndex = 0;
             // 
             // button1
             // 
-            button1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button1.Location = new Point(47, 12);
+            button1.Location = new Point(390, 372);
             button1.Name = "button1";
-            button1.Size = new Size(123, 57);
-            button1.TabIndex = 0;
-            button1.Text = "Создать ";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 1;
+            button1.Text = "удалить";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += btnCreate_Click;
+            button1.Click += button1_Click;
             // 
-            // CreateForm
+            // RemoveBeginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(260, 121);
+            ClientSize = new Size(800, 450);
             Controls.Add(button1);
-            Name = "CreateForm";
-            Text = "Создать список";
+            Controls.Add(dataGridView1);
+            Name = "RemoveBeginForm";
+            Text = "Удаление с начала ";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
+        private DataGridView dataGridView1;
         private Button button1;
     }
 }

@@ -38,21 +38,25 @@ namespace labWork2Sim
             if (current == null)
             {
                 dgv.Rows.Add("", "Список пуст", "", "", "");
-                return;
+                
+
             }
 
-            while (current != null)
+            else
             {
-                dgv.Rows.Add(
+                while (current != null)
+                {
+                    dgv.Rows.Add(
                     index.ToString(),
                     current.PassengerName,
                     current.FlightNumber,
                     current.Destination,
-                    current.DepartureDate.ToString("dd.MM.yyyy")
-                );
-                current = current.Link;
-                index++;
+                    current.DepartureDate.ToString("dd.MM.yyyy"));
+                    current = current.Link;
+                    index++;
+                }
             }
+            
         }
         public void DisplayByFlightAndDate(DataGridView dgv, string flightNumber, DateTime date)
         {
@@ -60,6 +64,7 @@ namespace labWork2Sim
 
             if (dgv.Columns.Count == 0)
             {
+                dgv.Columns.Add("ColNum", "№");
                 dgv.Columns.Add("ColPassenger", "Пассажир");
                 dgv.Columns.Add("ColFlight", "Рейс");
                 dgv.Columns.Add("ColDest", "Назначение");
@@ -67,6 +72,7 @@ namespace labWork2Sim
             }
 
             Node current = first;
+            int index = 1;
             bool found = false;
 
             while (current != null)
@@ -75,6 +81,7 @@ namespace labWork2Sim
                     current.DepartureDate.Date == date.Date)
                 {
                     dgv.Rows.Add(
+                        index.ToString(),
                         current.PassengerName,
                         current.FlightNumber,
                         current.Destination,
@@ -82,6 +89,7 @@ namespace labWork2Sim
                     );
                     found = true;
                 }
+                index++;
                 current = current.Link;
             }
 
@@ -92,10 +100,12 @@ namespace labWork2Sim
         }
         public bool DisplayByPassenger(DataGridView dgv, string passengerName)
         {
+            bool flag = false;
             dgv.Rows.Clear();
 
             if (dgv.Columns.Count == 0)
             {
+                dgv.Columns.Add("ColNum", "№");
                 dgv.Columns.Add("ColPassenger", "Пассажир");
                 dgv.Columns.Add("ColFlight", "Рейс");
                 dgv.Columns.Add("ColDest", "Назначение");
@@ -103,19 +113,23 @@ namespace labWork2Sim
             }
 
             Node current = first;
+            int index = 1;
 
             while (current != null)
             {
                 if (current.PassengerName.Equals(passengerName, StringComparison.OrdinalIgnoreCase))
                 {
                     dgv.Rows.Add(
+                        index.ToString(),
                         current.PassengerName,
                         current.FlightNumber,
                         current.Destination,
                         current.DepartureDate.ToString("dd.MM.yyyy")
+
                     );
-                    return true;
+                    flag= true;
                 }
+                index++;
                 current = current.Link;
             }
 
@@ -146,30 +160,116 @@ namespace labWork2Sim
         public bool AddAtPosition(int position, string destination, string flightNumber, string passengerName, DateTime departureDate)
         {
             bool flag = false;
-            if (position < 1) flag = false;
 
-            if (position == 1)
+            if (position >= 1)
             {
-                AddToBeginning(destination, flightNumber, passengerName, departureDate);
-                flag = true;
+                if (position == 1)
+                {
+                    AddToBeginning(destination, flightNumber, passengerName, departureDate);
+                    flag = true;
+                }
+                else if (first != null)
+                {
+                    Node current = first;
+
+                    for (int i = 1; current != null && i < position - 1; i++)
+                    {
+                        current = current.Link;
+                    }
+
+                    if (current != null)
+                    {
+                        Node newNode = new Node(destination, flightNumber, passengerName, departureDate);
+                        newNode.Link = current.Link;
+                        current.Link = newNode;
+                        flag = true;
+                    }
+                }
             }
-            Node current = first;
-            for (int i = 1; current != null && i < position - 1; i++)
-            {
-                current = current.Link;
-            }
-            if (current == null) flag = false;
-            else
-            {
-                Node newNode = new Node(destination, flightNumber, passengerName, departureDate);
-                newNode.Link = current.Link;
-                current.Link = newNode;
-            }
+
             return flag;
         }
+
+
+
+        public bool RemoveFromBeginning()
+        {
+            bool flag = true;
+            if (first == null) flag= false;
+            else
+            {
+                first = first.Link;
+            }
+           
+            return flag;
+        }
+
+        public bool RemoveFromEnd()
+        {
+            bool flag = true;
+            if (first == null) flag= false;
+
+            if (first.Link == null)
+            {
+                first = null;
+                flag= true;
+            }
+            else
+            {
+                Node current = first;
+                while (current.Link.Link != null)
+                current = current.Link;
+
+                current.Link = null;
+            }
+            
+            return flag;
+        }
+
+        public bool RemoveAtPosition(int position)
+        {
+            bool flag = false;
+
+            if (position >= 1 && first != null)
+            {
+                if (position == 1)
+                {
+                    first = first.Link;
+                    flag = true;
+                }
+                else
+                {
+                    Node current = first;
+                    int index = 1;
+
+                    while (current != null && index < position - 1)
+                    {
+                        current = current.Link;
+                        index++;
+                    }
+
+                    if (current != null && current.Link != null)
+                    {
+                        current.Link = current.Link.Link;
+                        flag = true;
+                    }
+                }
+            }
+
+            return flag;
+        }
+
+
+
+
+
         public void Destroy()
         {
             first = null;
+        }
+        public bool IsEmpty()
+        {
+            return first == null;
         }
 
     }

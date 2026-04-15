@@ -132,7 +132,7 @@
             Controls.Add(btnSearchFlight);
             Controls.Add(dataGridView1);
             Name = "ProcessForm";
-            Text = "ProcessForm";
+            Text = "Обработка";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

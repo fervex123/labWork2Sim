@@ -44,9 +44,7 @@
             обработкаToolStripMenuItem = new ToolStripMenuItem();
             разрушениеToolStripMenuItem = new ToolStripMenuItem();
             выходToolStripMenuItem = new ToolStripMenuItem();
-            dataGrid = new DataGridView();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGrid).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -55,7 +53,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, заданиеToolStripMenuItem, выходToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1674, 38);
+            menuStrip1.Size = new Size(537, 38);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -100,18 +98,21 @@
             вНачалоToolStripMenuItem.Name = "вНачалоToolStripMenuItem";
             вНачалоToolStripMenuItem.Size = new Size(325, 34);
             вНачалоToolStripMenuItem.Text = "В начало";
+            вНачалоToolStripMenuItem.Click += вНачалоToolStripMenuItem_Click;
             // 
             // вКонецToolStripMenuItem
             // 
             вКонецToolStripMenuItem.Name = "вКонецToolStripMenuItem";
             вКонецToolStripMenuItem.Size = new Size(325, 34);
             вКонецToolStripMenuItem.Text = "В конец";
+            вКонецToolStripMenuItem.Click += вКонецToolStripMenuItem_Click;
             // 
             // вПроизвольнуюТочкуToolStripMenuItem
             // 
             вПроизвольнуюТочкуToolStripMenuItem.Name = "вПроизвольнуюТочкуToolStripMenuItem";
             вПроизвольнуюТочкуToolStripMenuItem.Size = new Size(325, 34);
             вПроизвольнуюТочкуToolStripMenuItem.Text = "В произвольную точку";
+            вПроизвольнуюТочкуToolStripMenuItem.Click += вПроизвольнуюТочкуToolStripMenuItem_Click;
             // 
             // удалениеЭлементаToolStripMenuItem
             // 
@@ -119,36 +120,42 @@
             удалениеЭлементаToolStripMenuItem.Name = "удалениеЭлементаToolStripMenuItem";
             удалениеЭлементаToolStripMenuItem.Size = new Size(313, 34);
             удалениеЭлементаToolStripMenuItem.Text = "Удаление элемента";
+            удалениеЭлементаToolStripMenuItem.Click += удалениеЭлементаToolStripMenuItem_Click;
             // 
             // вНачалеToolStripMenuItem
             // 
             вНачалеToolStripMenuItem.Name = "вНачалеToolStripMenuItem";
             вНачалеToolStripMenuItem.Size = new Size(321, 34);
             вНачалеToolStripMenuItem.Text = "В начале";
+            вНачалеToolStripMenuItem.Click += вНачалеToolStripMenuItem_Click;
             // 
             // вКонцеToolStripMenuItem
             // 
             вКонцеToolStripMenuItem.Name = "вКонцеToolStripMenuItem";
             вКонцеToolStripMenuItem.Size = new Size(321, 34);
             вКонцеToolStripMenuItem.Text = "В конце";
+            вКонцеToolStripMenuItem.Click += вКонцеToolStripMenuItem_Click;
             // 
             // вПроизвольнойТочкеToolStripMenuItem
             // 
             вПроизвольнойТочкеToolStripMenuItem.Name = "вПроизвольнойТочкеToolStripMenuItem";
             вПроизвольнойТочкеToolStripMenuItem.Size = new Size(321, 34);
             вПроизвольнойТочкеToolStripMenuItem.Text = "В произвольной точке";
+            вПроизвольнойТочкеToolStripMenuItem.Click += вПроизвольнойТочкеToolStripMenuItem_Click;
             // 
             // обработкаToolStripMenuItem
             // 
             обработкаToolStripMenuItem.Name = "обработкаToolStripMenuItem";
             обработкаToolStripMenuItem.Size = new Size(329, 34);
             обработкаToolStripMenuItem.Text = "Обработка";
+            обработкаToolStripMenuItem.Click += обработкаToolStripMenuItem_Click;
             // 
             // разрушениеToolStripMenuItem
             // 
             разрушениеToolStripMenuItem.Name = "разрушениеToolStripMenuItem";
             разрушениеToolStripMenuItem.Size = new Size(329, 34);
             разрушениеToolStripMenuItem.Text = "Разрушение";
+            разрушениеToolStripMenuItem.Click += разрушениеToolStripMenuItem_Click;
             // 
             // выходToolStripMenuItem
             // 
@@ -157,26 +164,16 @@
             выходToolStripMenuItem.Text = "Выход";
             выходToolStripMenuItem.Click += выходToolStripMenuItem_Click;
             // 
-            // dataGrid
-            // 
-            dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGrid.Location = new Point(117, 103);
-            dataGrid.Name = "dataGrid";
-            dataGrid.Size = new Size(1347, 517);
-            dataGrid.TabIndex = 3;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1674, 671);
-            Controls.Add(dataGrid);
+            ClientSize = new Size(537, 193);
             Controls.Add(menuStrip1);
             Name = "Form1";
             Text = "Лабораторная работа 2 «Списки»";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -198,6 +195,5 @@
         private ToolStripMenuItem вПроизвольнойТочкеToolStripMenuItem;
         private ToolStripMenuItem обработкаToolStripMenuItem;
         private ToolStripMenuItem разрушениеToolStripMenuItem;
-        private DataGridView dataGrid;
     }
 }
