@@ -6,7 +6,7 @@ namespace labWork2Sim
         public Form1()
         {
             InitializeComponent();
-            ticketList = null; // Список еще не создан
+            ticketList = null; 
             SetButtonsEnabled(false);
         }
 
@@ -31,7 +31,7 @@ namespace labWork2Sim
             if (cf.ListCreated)
             {
                 ticketList = cf.NewList;
-                SetButtonsEnabled(true); // ВКЛЮЧАЕМ все кнопки!
+                SetButtonsEnabled(true); 
                 MessageBox.Show("Список создан! Теперь доступны все функции.");
             }
         }

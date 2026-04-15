@@ -22,7 +22,7 @@ namespace labWork2Sim
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            NewList = new SingleLinkedList(); // СОЗДАЕМ НОВЫЙ!
+            NewList = new SingleLinkedList(); 
             MessageBox.Show("Новый пустой список создан!");
             ListCreated=true;
             this.Close();

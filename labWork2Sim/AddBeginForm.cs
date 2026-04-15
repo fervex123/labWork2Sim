@@ -37,7 +37,6 @@ namespace labWork2Sim
             list.AddToBeginning(txtDest.Text, txtFlight.Text, txtName.Text, dtpDate.Value);
             UpdateDisplay();
 
-            // Очистить поля
             txtDest.Clear();
             txtFlight.Clear();
             txtName.Clear();
