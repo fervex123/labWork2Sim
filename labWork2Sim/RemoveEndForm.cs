@@ -29,7 +29,6 @@ namespace labWork2Sim
             if (list.IsEmpty())
             {
                 MessageBox.Show("Список пуст! Нечего удалять.");
-                return;
             }
 
             list.RemoveFromEnd();

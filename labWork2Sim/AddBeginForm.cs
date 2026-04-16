@@ -31,7 +31,6 @@ namespace labWork2Sim
             string.IsNullOrWhiteSpace(txtName.Text))
             {
                 MessageBox.Show("Заполните все поля!");
-                return;
             }
 
             list.AddToBeginning(txtDest.Text, txtFlight.Text, txtName.Text, dtpDate.Value);
@@ -40,6 +39,11 @@ namespace labWork2Sim
             txtDest.Clear();
             txtFlight.Clear();
             txtName.Clear();
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

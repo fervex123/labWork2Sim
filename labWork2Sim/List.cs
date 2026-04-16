@@ -8,7 +8,7 @@ namespace labWork2Sim
 
     public class SingleLinkedList
     {
-        private Node first;
+        public Node first;
         public SingleLinkedList()
         {
             first = null;
@@ -117,7 +117,7 @@ namespace labWork2Sim
 
             while (current != null)
             {
-                if (current.PassengerName.Equals(passengerName, StringComparison.OrdinalIgnoreCase))
+                if (current.PassengerName == passengerName)
                 {
                     dgv.Rows.Add(
                         index.ToString(),
@@ -259,7 +259,19 @@ namespace labWork2Sim
             return flag;
         }
 
+        public Node GetNodeAtPosition(int position)
+        {
+            if (position < 1 || first == null) return null;
 
+            Node current = first;
+            for (int i = 1; current != null && i < position; i++)
+            {
+                current = current.Link;
+            }
+
+            return current;
+        }
+        
 
 
 

@@ -43,44 +43,52 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(357, 42);
+            dataGridView1.Location = new Point(408, 56);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(396, 382);
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(453, 509);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
             // 
             // txtDest
             // 
-            txtDest.Location = new Point(93, 189);
+            txtDest.Location = new Point(106, 252);
+            txtDest.Margin = new Padding(3, 4, 3, 4);
             txtDest.Name = "txtDest";
-            txtDest.Size = new Size(100, 23);
+            txtDest.Size = new Size(114, 27);
             txtDest.TabIndex = 1;
             // 
             // txtFlight
             // 
-            txtFlight.Location = new Point(93, 118);
+            txtFlight.Location = new Point(106, 157);
+            txtFlight.Margin = new Padding(3, 4, 3, 4);
             txtFlight.Name = "txtFlight";
-            txtFlight.Size = new Size(100, 23);
+            txtFlight.Size = new Size(114, 27);
             txtFlight.TabIndex = 2;
             // 
             // txtName
             // 
-            txtName.Location = new Point(93, 42);
+            txtName.Location = new Point(106, 56);
+            txtName.Margin = new Padding(3, 4, 3, 4);
             txtName.Name = "txtName";
-            txtName.Size = new Size(100, 23);
+            txtName.Size = new Size(114, 27);
             txtName.TabIndex = 3;
             // 
             // dtpDate
             // 
-            dtpDate.Location = new Point(73, 271);
+            dtpDate.Location = new Point(83, 361);
+            dtpDate.Margin = new Padding(3, 4, 3, 4);
             dtpDate.Name = "dtpDate";
-            dtpDate.Size = new Size(200, 23);
+            dtpDate.Size = new Size(228, 27);
             dtpDate.TabIndex = 4;
             // 
             // button1
             // 
-            button1.Location = new Point(128, 358);
+            button1.Location = new Point(146, 477);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(86, 31);
             button1.TabIndex = 5;
             button1.Text = "добавить";
             button1.UseVisualStyleBackColor = true;
@@ -89,35 +97,35 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(115, 9);
+            label1.Location = new Point(131, 12);
             label1.Name = "label1";
-            label1.Size = new Size(30, 15);
+            label1.Size = new Size(37, 20);
             label1.TabIndex = 6;
             label1.Text = "фио";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(112, 86);
+            label2.Location = new Point(128, 115);
             label2.Name = "label2";
-            label2.Size = new Size(33, 15);
+            label2.Size = new Size(42, 20);
             label2.TabIndex = 7;
             label2.Text = "рейс";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(93, 158);
+            label3.Location = new Point(106, 211);
             label3.Name = "label3";
-            label3.Size = new Size(108, 15);
+            label3.Size = new Size(138, 20);
             label3.TabIndex = 8;
             label3.Text = "пункт назначения ";
             // 
             // AddBeginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -127,6 +135,7 @@
             Controls.Add(txtFlight);
             Controls.Add(txtDest);
             Controls.Add(dataGridView1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AddBeginForm";
             Text = "Добавить в начало";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

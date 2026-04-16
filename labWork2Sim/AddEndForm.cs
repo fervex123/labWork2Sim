@@ -32,7 +32,6 @@ namespace labWork2Sim
                 string.IsNullOrWhiteSpace(txtName.Text))
             {
                 MessageBox.Show("Заполните все поля!");
-                return;
             }
 
             list.AddToEnd(txtDest.Text, txtFlight.Text, txtName.Text, dtpDate.Value);

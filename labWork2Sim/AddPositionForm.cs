@@ -27,7 +27,6 @@ namespace labWork2Sim
             if (!int.TryParse(number.Text, out int position) || position < 1)
             {
                 MessageBox.Show("Введите корректный номер (целое число >= 1)");
-                return;
             }
 
             if (string.IsNullOrWhiteSpace(txtDest.Text) ||
@@ -35,7 +34,6 @@ namespace labWork2Sim
                 string.IsNullOrWhiteSpace(txtName.Text))
             {
                 MessageBox.Show("Заполните все поля!");
-                return;
             }
 
             bool success = list.AddAtPosition(position, txtDest.Text, txtFlight.Text, txtName.Text, dtpDate.Value);
