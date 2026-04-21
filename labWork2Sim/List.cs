@@ -156,7 +156,7 @@ namespace labWork2Sim
                     current = current.Link;
                 current.Link = newNode;
             }
-        }
+        } 
         public bool AddAtPosition(int position, string destination, string flightNumber, string passengerName, DateTime departureDate)
         {
             bool flag = false;
