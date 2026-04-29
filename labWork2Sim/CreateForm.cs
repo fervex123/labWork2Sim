@@ -18,11 +18,11 @@ namespace labWork2Sim
             NewList = null;
             ListCreated = false;
         }
-        public SingleLinkedList NewList { get; private set; }
+        public CycleDoubleLinkedList NewList { get; private set; }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            NewList = new SingleLinkedList(); 
+            NewList = new CycleDoubleLinkedList(); 
             MessageBox.Show("Новый пустой список создан!");
             ListCreated=true;
             this.Close();

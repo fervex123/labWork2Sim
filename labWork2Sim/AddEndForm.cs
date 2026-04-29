@@ -11,9 +11,9 @@ namespace labWork2Sim
     public partial class AddEndForm : Form
     {
 
-        private SingleLinkedList list;
+        private CycleDoubleLinkedList list;
 
-        public AddEndForm(SingleLinkedList list)
+        public AddEndForm(CycleDoubleLinkedList list)
         {
             InitializeComponent();
             this.list = list;

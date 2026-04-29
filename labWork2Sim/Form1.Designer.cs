@@ -154,7 +154,7 @@
             // 
             разрушениеToolStripMenuItem.Name = "разрушениеToolStripMenuItem";
             разрушениеToolStripMenuItem.Size = new Size(329, 34);
-            разрушениеToolStripMenuItem.Text = "Разрушение";
+            разрушениеToolStripMenuItem.Text = "Очистка";
             разрушениеToolStripMenuItem.Click += разрушениеToolStripMenuItem_Click;
             // 
             // выходToolStripMenuItem

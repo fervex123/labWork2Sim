@@ -2,7 +2,7 @@ namespace labWork2Sim
 {
     public partial class Form1 : Form
     {
-        private SingleLinkedList ticketList;
+        private CycleDoubleLinkedList ticketList;
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +19,22 @@ namespace labWork2Sim
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            if (ticketList != null)
+            {
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите выйти список будет уничтожен ?\nВсе данные будут потеряны!", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    ticketList.Destroy();
+                    Close();
+                }
+            }
+            else
+            {
+                Close();
+            }
+            
+
         }
 
         private void созданиеСпискаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,12 +105,12 @@ namespace labWork2Sim
 
         private void разрушениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Вы уверены, что хотите разрушить список?\nВсе данные будут потеряны!", "Подтверждение",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите очистить список?\nВсе данные будут потеряны!", "Подтверждение",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
-                ticketList.Destroy();
-                SetButtonsEnabled(false);
+                ticketList.Clear();
+                SetButtonsEnabled(true);
                 MessageBox.Show("Список успешно разрушен!", "Информация");
             }
         }

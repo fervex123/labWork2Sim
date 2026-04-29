@@ -11,9 +11,9 @@ namespace labWork2Sim
 {
     public partial class AddBeginForm : Form
     {
-        private SingleLinkedList list;
+        private CycleDoubleLinkedList list;
 
-        public AddBeginForm(SingleLinkedList list)
+        public AddBeginForm(CycleDoubleLinkedList list)
         {
             InitializeComponent();
             this.list = list;

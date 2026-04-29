@@ -10,9 +10,9 @@ namespace labWork2Sim
 {
     public partial class RemovePositionForm : Form
     {
-        private SingleLinkedList list;
+        private CycleDoubleLinkedList list;
 
-        public RemovePositionForm(SingleLinkedList list)
+        public RemovePositionForm(CycleDoubleLinkedList list)
         {
             InitializeComponent();
             this.list = list;

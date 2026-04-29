@@ -5,9 +5,9 @@ namespace labWork2Sim
 {
     public partial class ProcessForm : Form
     {
-        private SingleLinkedList list;
+        private CycleDoubleLinkedList list;
         private bool isCellEdited = false;
-        public ProcessForm(SingleLinkedList list)
+        public ProcessForm(CycleDoubleLinkedList list)
         {
             InitializeComponent();
             this.list = list;
@@ -26,7 +26,7 @@ namespace labWork2Sim
 
                 int position = i + 1; 
 
-                Node node = list.GetNodeAtPosition(position);
+                DoubleNode node = list.GetNodeAtPosition(position);
                 if (node == null) continue;
 
                 string passengerName = row.Cells["ColPassenger"].Value?.ToString();

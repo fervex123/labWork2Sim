@@ -11,9 +11,9 @@ namespace labWork2Sim
 {
     public partial class RemoveBeginForm : Form
     {
-         private SingleLinkedList list;
+         private CycleDoubleLinkedList list;
 
-        public RemoveBeginForm(SingleLinkedList list)
+        public RemoveBeginForm(CycleDoubleLinkedList list)
         {
             InitializeComponent();
             this.list = list;
@@ -27,7 +27,7 @@ namespace labWork2Sim
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (list.IsEmpty())
+            if (list==null)
             {
                 MessageBox.Show("Список пуст! Нечего удалять.");
             }

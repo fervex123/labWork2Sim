@@ -11,8 +11,8 @@ namespace labWork2Sim
 {
     public partial class AddPositionForm : Form
     {
-        private SingleLinkedList list;
-        public AddPositionForm(SingleLinkedList list)
+        private CycleDoubleLinkedList list;
+        public AddPositionForm(CycleDoubleLinkedList list)
         {
             InitializeComponent();
             this.list = list;

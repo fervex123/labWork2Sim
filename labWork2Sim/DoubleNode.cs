@@ -4,13 +4,15 @@ using System.Text;
 
 namespace labWork2Sim
 {
-    public class Node
+    public class DoubleNode
     {
-        private string destination;
-        private string flightNumber;
-        private string passengerName;
-        private DateTime departureDate;
-        private Node link;
+
+        private string destination;      
+        private string flightNumber;     
+        private string passengerName;    
+        private DateTime departureDate;  
+        private DoubleNode next;
+        private DoubleNode prev;
 
         public string Destination
         {
@@ -36,35 +38,48 @@ namespace labWork2Sim
             set { departureDate = value; }
         }
 
-        public Node Link
+        public DoubleNode Next
         {
-            get { return link; }
-            set { link = value; }
+            get { return next; }
+            set { next = value; }
         }
 
-
-        public Node()
+        public DoubleNode Prev
         {
-            link = null;
+            get { return prev; }
+            set { prev = value; }
         }
 
-        public Node(string destination, string flightNumber, string passengerName, DateTime departureDate)
+        public DoubleNode()
+        {
+            destination = "";
+            flightNumber = "";
+            passengerName = "";
+            departureDate = DateTime.Today;
+            next = null;
+            prev = null;
+        }
+
+        public DoubleNode(string destination, string flightNumber, string passengerName, DateTime departureDate)
         {
             this.destination = destination;
             this.flightNumber = flightNumber;
             this.passengerName = passengerName;
             this.departureDate = departureDate;
-            this.link = null;
+            next = null;
+            prev = null;
         }
 
-        public Node(string destination, string flightNumber, string passengerName, DateTime departureDate, Node link)
+        public DoubleNode(string destination, string flightNumber, string passengerName, DateTime departureDate,
+                         DoubleNode next, DoubleNode prev)
         {
             this.destination = destination;
             this.flightNumber = flightNumber;
             this.passengerName = passengerName;
             this.departureDate = departureDate;
-            this.link = link;
+            this.next = next;
+            this.prev = prev;
         }
-
     }
 }
+
